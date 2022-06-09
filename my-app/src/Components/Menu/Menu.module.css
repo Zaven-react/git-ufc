@@ -1,0 +1,17 @@
+.menu {
+  background-color: rgb(180, 155, 136);
+  font-style: italic;
+  padding-top: 100px;
+  padding-left: 20px;
+  grid-area: me;
+}
+
+.menu a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+
+.menu .active {
+  text-decoration: none;
+  color: rgb(226, 231, 205);
+}
