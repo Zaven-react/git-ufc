@@ -7,7 +7,7 @@ import "./index.css";
 import App from "./App";
 import store, { addNext, updater } from "./Redux/Redux-Store";
 import { BrowserRouter } from "react-router-dom";
-import stor from "./Redux/Store";
+import storeFighters from "./Redux/Store";
 
 let rerender = (state) => {
   ReactDOM.render(
@@ -17,7 +17,7 @@ let rerender = (state) => {
           state={state}
           dispatch={store.dispatch.bind(store)}
           store={store}
-          stor={stor}
+          storeFighters={storeFighters}
         />
       </BrowserRouter>
     </React.StrictMode>,
@@ -26,6 +26,7 @@ let rerender = (state) => {
 };
 
 rerender(store.getState());
+
 store.subscribe(() => {
   let state = store.getState();
   rerender(state);

@@ -1,9 +1,10 @@
 .rank {
-  display: grid;
-  grid-template-columns: 1fr 4fr;
+  display: block;
+ 
   padding: 10px;
 }
 
 .rank ul {
   list-style: none;
+
 }

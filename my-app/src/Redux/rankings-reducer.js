@@ -3,7 +3,7 @@ const UPDATER = "UPDATER";
 
 let initialState = {
   fighters: [
-    { name: "Mcgregor", id: 1 },
+    { name: "McGregor", id: 1 },
     { name: "Khabib", id: 2 },
     { name: "Diaz", id: 3 },
     { name: "Masvidal", id: 4 },

@@ -6,14 +6,10 @@ const Menu = () => {
   return (
     <div className={z.menu}>
       <header>
+       
         <div>
-          <NavLink to="/light" activeClassName={z.active}>
-            LIGHTWEIGHT
-          </NavLink>
-        </div>
-        <div>
-          <NavLink to="/middle" activeClassName={z.active}>
-            MIDDLEWEIGHT
+          <NavLink to="/fighters" activeClassName={z.active}>
+            FIGHTERS
           </NavLink>
         </div>
         <div>

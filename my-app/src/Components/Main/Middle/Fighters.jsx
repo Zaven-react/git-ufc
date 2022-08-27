@@ -1,8 +1,8 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import z from "./Middle.module.css";
+import z from "./Fighters.module.css";
 
-const Middle = (props) => {
+const Fighters = (props) => {
   let MidFight = props.state.mFighter.map((f) => {
     return (
       <div>
@@ -12,6 +12,7 @@ const Middle = (props) => {
         <div>{f.name}</div>
         <div>record-{f.record}</div>
         <div>weight-{f.weight}</div>
+        <div>age-{f.age} </div>
       </div>
     );
   });
@@ -23,4 +24,4 @@ const Middle = (props) => {
   );
 };
 
-export default Middle;
+export default Fighters;
