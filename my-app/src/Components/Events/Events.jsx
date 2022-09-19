@@ -3,11 +3,11 @@ import React from "react";
 import z from "./Events.module.css";
 
 const Events = (props) => {
- debugger
-    let firstFighter = props.store.events.first.map((ev1) => {
+
+    let firstFighter = props.store.first.map((ev1) => {
         return <div>{ev1.name}</div>;
       });
-      let secondFighter = props.store.events.second.map((ev2) => {
+      let secondFighter = props.store.second.map((ev2) => {
         return (
           <div>
             <span>VS </span> {ev2.name}
@@ -15,8 +15,8 @@ const Events = (props) => {
         );
       });
     
-      let newName1 = props.store.events.newName;
-      let newName2 = props.store.events.newName1;
+      let newName1 = props.store.newName;
+      let newName2 = props.store.newName1;
 
 
       let addFight = () => {

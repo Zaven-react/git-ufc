@@ -3,8 +3,8 @@ const UPDATER_NEW_NAME_TWO = "UPDATER-NEW-NAME-TWO";
 const ADD_NEW_NAME = "ADD-NEW-NAME";
 
 let initialState = {
-  first: [{ name: "Diaz" }, { name: "Oliveira" }, { name: "Masvidal" }],
-  second: [{ name: "Edvards" }, { name: "Chandler" }, { name: "Usman" }],
+  first: [{ name: "Diaz" }, { name: "Chimaev" }, { name: "Masvidal" }],
+  second: [{ name: "Ferguson" }, { name: "Holland" }, { name: "Usman" }],
   newName: "",
   newName1: "",
 };

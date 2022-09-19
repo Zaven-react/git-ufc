@@ -8,32 +8,17 @@ import Menu from "./Components/Menu/Menu";
 import z from "./Components/Main/Main.module.css";
 import RankingsContainer from "./Components/Rankings/RankingsContainer";
 import EventsContainer from "./Components/Events/EventsContainer";
+import storeFighters from "./Redux/Store";
 
 const App = (props) => {
-  debugger;
-  return (
+    return (
     <div className="App">
       <Header />
       <Menu />
       <div className={z.main}>
-        <Route
-          path="/fighters"
-          render={() => <Fighters state={props.storeFighters.fighters} />}
-        />
-       
-        <Route
-          path="/rank"
-          render={() => (
-           <RankingsContainer  store={props.store}  />        
-                     
-          )}
-        />
-        <Route
-          path="/events"
-          render={() => (
-            <EventsContainer   store={props.state} dispatch={props.dispatch}/>
-          )}
-        />
+        <Route  path="/fighters"  render={() => <Fighters/>}  />       
+        <Route  path="/rank"  render={() => ( <RankingsContainer/> )}  />                     
+        <Route  path="/events"   render={() => ( <EventsContainer /> )}      />  
       </div>
     </div>
   );

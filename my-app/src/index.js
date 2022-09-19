@@ -8,28 +8,26 @@ import App from "./App";
 import store, { addNext, updater } from "./Redux/Redux-Store";
 import { BrowserRouter } from "react-router-dom";
 import storeFighters from "./Redux/Store";
+import  {Provider} from "./StoreContext";
 
 let rerender = (state) => {
   ReactDOM.render(
-    <React.StrictMode>
+    
       <BrowserRouter>
-        <App
-          state={state}
-          dispatch={store.dispatch.bind(store)}
-          store={store}
-          storeFighters={storeFighters}
-        />
-      </BrowserRouter>
-    </React.StrictMode>,
+        <Provider store={store}>
+          <App />           
+        </Provider>
+      </BrowserRouter>,
+  
     document.getElementById("root")
   );
 };
 
-rerender(store.getState());
+rerender();
 
 store.subscribe(() => {
-  let state = store.getState();
-  rerender(state);
+ 
+  rerender();
 });
 
 // If you want to start measuring performance in your app, pass a function
