@@ -3,7 +3,7 @@
 let initialState =   {
     mFighter: [
       {
-        name: "Masvidal",
+        name: "Jorge Masvidal",
         record: "30-5",
         weight: 77,
         age:37,
@@ -11,7 +11,7 @@ let initialState =   {
       },
 
       {
-        name: "Usman",
+        name: "Camaru Usman",
         record: "20-2",
         weight: 77,
         age:37,
@@ -19,21 +19,21 @@ let initialState =   {
       },
 
       {
-        name: "McGregor",
+        name: "Conor McGregor",
         record: "20-4",
         weight: 77,
         age:33,
         link: "https://dmxg5wxfqgb4u.cloudfront.net/styles/athlete_bio_full_body/s3/2020-01/MCGREGOR_CONOR_L.png?1Q5w9ozzDDdawsoZtVLqsREduo8rIiNQ&itok=PzOsuQxr",
       },
       {
-        name: "Diaz",
+        name: "Nate Diaz",
         record: "22-13",
         weight: 70,
         age:36,
         link: "https://dmxg5wxfqgb4u.cloudfront.net/styles/athlete_bio_full_body/s3/image/ufc-fighter-container/68891/profile-galery/fullbodyleft-picture/DIAZ_NATE_L.png?LosLpsLkFCrqLdnFEWlkUoNQ1m6p788M&itok=xWG-pCOI",
       },
       {
-        name: "Chandler",
+        name: "Michael Chandler",
         record: "20-5",
         weight: 70,
         age:34,
@@ -45,7 +45,7 @@ let initialState =   {
 const fighterReducer = (state = initialState,action)=>{
   switch (action.type){
     // case ESH:
-    // // state.mFighter[0].name = "urish"
+    // state.mFighter[0].name = "urish"
     //   return state;
       default:
         return state

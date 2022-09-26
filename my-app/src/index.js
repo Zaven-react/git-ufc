@@ -7,15 +7,14 @@ import "./index.css";
 import App from "./App";
 import store, { addNext, updater } from "./Redux/Redux-Store";
 import { BrowserRouter } from "react-router-dom";
-import storeFighters from "./Redux/Store";
-import  {Provider} from "./StoreContext";
+import  {Provider} from "react-redux";
+
 
 let rerender = (state) => {
-  ReactDOM.render(
-    
+  ReactDOM.render(    
       <BrowserRouter>
         <Provider store={store}>
-          <App />           
+          <App/>           
         </Provider>
       </BrowserRouter>,
   

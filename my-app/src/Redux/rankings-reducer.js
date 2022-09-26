@@ -32,6 +32,10 @@ const rankingsReducer = (state = initialState, action) => {
     case UPDATER:
       state.newName = action.newNew;
       return state;
+      // return {
+      //   ...state,
+      //   newName: action.newNew
+      // }
     default:
       return state;
   }

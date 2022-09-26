@@ -1,32 +1,27 @@
 import React from "react";
+import { connect } from "react-redux";
 import { updaterAC, addNextAC } from "../../Redux/rankings-reducer";
-import StoreContext from "../../StoreContext";
 import Rankings from "./Rankings";
 
-const RankingsContainer = (props) => {     
-debugger
 
-  return ( <StoreContext.Consumer>
-    
-    {
-             (store)=>{
-              
-              let addNewName = () => {
-               store.dispatch(addNextAC());
-             };
+let mapStateToProps = (state)=>{
+  return {
+    fighters:state.rankings.fighters,
+    newName:state.rankings.newName             
+  }
+}
 
-               let updateText = (text) => {    
-                store.dispatch(updaterAC(text));
-             };
+let mapDispatchToProps = (dispatch)=>{
+  return {
+    updateFighterName:(text)=>{
+      dispatch(updaterAC(text));
+    },
+    addNewName:()=>{
+      dispatch(addNextAC());
+    }
+  }
+}
 
-              let state = store.getState()
-            return  <Rankings updateFighterName={updateText}
-                        addNewName={addNewName} 
-                        fighters={state.rankings.fighters}
-                        newName={state.rankings.newName}/>}
-          }
-            </StoreContext.Consumer>  
-        )
-};
+const RankingsContainer = connect(mapStateToProps,mapDispatchToProps)(Rankings)
 
 export default RankingsContainer;
