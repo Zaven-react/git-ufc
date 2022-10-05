@@ -21,21 +21,22 @@ let initialState = {
 
 const rankingsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case ADD_NEXT:
+    case ADD_NEXT:{
       let newFighter = {
         name: state.newName,
         id: 6,
       };
-      state.fighters.push(newFighter);
-      state.newName = "";
-      return state;
-    case UPDATER:
-      state.newName = action.newNew;
-      return state;
-      // return {
-      //   ...state,
-      //   newName: action.newNew
-      // }
+      return{
+        ...state,
+        fighters:[...state.fighters,newFighter],
+        newName:""   
+        }
+      }
+    case UPDATER:{
+      return{...state,
+        newName:action.newNew
+        }
+      } 
     default:
       return state;
   }

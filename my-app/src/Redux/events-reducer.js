@@ -12,11 +12,16 @@ let initialState = {
 const eventsReducer = (state = initialState, action) => {
   switch (action.type) {
     case UPDATER_NEW_NAME:
-      state.newName = action.headlinerOne;
-      return state;
+      return{
+        ...state,
+        newName:action.headlinerOne
+      }      
     case UPDATER_NEW_NAME_TWO:
-      state.newName1 = action.headlinerTwo;
-      return state;
+      return{
+        ...state,
+        newName1:action.headlinerTwo
+      }
+  
     case ADD_NEW_NAME:
       let nName = state.newName;
       state.newName = "";
@@ -33,7 +38,7 @@ const eventsReducer = (state = initialState, action) => {
       } else {
         state.second.push({ name: nName1 });
       }
-      return state;
+      return {...state};
     default:
       return state;
   }
