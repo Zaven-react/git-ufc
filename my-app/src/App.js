@@ -8,6 +8,7 @@ import Menu from "./Components/Menu/Menu";
 import z from "./Components/Main/Main.module.css";
 import RankingsContainer from "./Components/Rankings/RankingsContainer";
 import EventsContainer from "./Components/Events/EventsContainer";
+import FansContainer from "./Components/Fans/FansContainer";
 
 
 
@@ -19,7 +20,8 @@ const App = (props) => {
       <div className={z.main}>
         <Route  path="/fighters"  render={() => <FightersList/>}  />       
         <Route  path="/rank"  render={() => ( <RankingsContainer/> )}  />                     
-        <Route  path="/events"   render={() => ( <EventsContainer /> )}      />  
+        <Route  path="/events"   render={() => ( <EventsContainer /> )}/>  
+        <Route  path="/fans"   render={() => <FansContainer/>}/>  
       </div>
     </div>
   );

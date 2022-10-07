@@ -22,6 +22,11 @@ const Menu = () => {
             EVENTS
           </NavLink>
         </div>
+        <div>
+          <NavLink to="/fans" activeClassName={z.active}>
+            FANS
+          </NavLink>
+        </div>
       </header>
     </div>
   );
