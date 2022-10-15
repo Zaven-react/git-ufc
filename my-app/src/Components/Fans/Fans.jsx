@@ -4,11 +4,11 @@ import styles from "./fans.module.css";
 import userPhoto from "../../assets/images/image.png"
 
 class Fans extends React.Component {
-    constructor(props){
-        super(props)       
-            axios.get("https://social-network.samuraijs.com/api/1.0/users").then(response=>{           
-                this.props.setFans(response.data.items)           
-            })         
+ 
+    componentDidMount(){
+        axios.get("https://social-network.samuraijs.com/api/1.0/users").then(response=>{           
+            this.props.setFans(response.data.items)           
+        })         
     }
   
     render(){
