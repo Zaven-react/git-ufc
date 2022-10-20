@@ -1,11 +1,15 @@
 import React from "react";
 import { connect } from "react-redux";
-import { followAC, setFansAC, unfollowAC } from "../../Redux/fanc-reducer";
+import { followAC, setCurrentPageAC, setFansAC, unfollowAC,setTotalFansCountAC } from "../../Redux/fanc-reducer";
 import Fans from "./Fans";
 
 let mapStateToProps = (state)=>{
+    
     return{
-        fans:state.fansPage.fans
+        fans:state.fansPage.fans,
+        pageSize:state.fansPage.pageSize,
+        totalFansCount:state.fansPage.totalFansCount,
+        currentPage:state.fansPage.currentPage,
     }
 }
 
@@ -19,6 +23,12 @@ let mapDispatchToProps = (dispatch)=>{
         },
         setFans:(fans)=>{
             dispatch(setFansAC(fans))
+        },
+        setCurrentPage:(pageNumber)=>{
+            dispatch(setCurrentPageAC(pageNumber))
+        },
+        setTotalFansCount:(totalCount)=>{
+            dispatch(setTotalFansCountAC(totalCount))
         }
     }
 }
