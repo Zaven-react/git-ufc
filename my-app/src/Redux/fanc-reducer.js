@@ -11,7 +11,7 @@ let initialState = {
   ],
   pageSize:10,
   totalFansCount:0,
-  currentPage:15,
+  currentPage:1,
  
 };
 
