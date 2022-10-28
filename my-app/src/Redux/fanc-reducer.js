@@ -2,7 +2,8 @@ const FOLLOW = "FOLLOW";
 const UNFOLLOW = "UNFOLLOW";
 const SET_FANS = "SET_FANS";
 const SET_CURRENT_PAGE = "SET_CURRENT_PAGE";
-const SET_TOTAL_FANS_COUNT = "SET_TOTAL_FANS_COUNT,";
+const SET_TOTAL_FANS_COUNT = "SET_TOTAL_FANS_COUNT";
+const TOGGLE_IS_FETCHING = "TOGGLE_IS_FETCHING";
 
 let initialState = {
   fans: [
@@ -12,6 +13,7 @@ let initialState = {
   pageSize:10,
   totalFansCount:0,
   currentPage:1,
+  isFetching:false,
  
 };
 
@@ -46,6 +48,9 @@ const fansReducer = (state = initialState, action) => {
     case SET_TOTAL_FANS_COUNT:{
       return {...state,totalFansCount:action.count}
     }
+    case TOGGLE_IS_FETCHING:{
+      return {...state,isFetching:action.isFetching}
+    }
    
     default:
       return state;
@@ -71,6 +76,10 @@ export const setFansAC = (fans) => ({
   export const setTotalFansCountAC = (totalFansCount) => ({
     type: SET_TOTAL_FANS_COUNT, 
     count:totalFansCount
+  });
+  export const toggleIsFetchingAC = (isFetching) => ({
+    type: TOGGLE_IS_FETCHING, 
+    isFetching
   });
 
 export default fansReducer;
