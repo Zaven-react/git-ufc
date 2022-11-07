@@ -57,27 +57,27 @@ const fansReducer = (state = initialState, action) => {
   }
 };
 
-export const followAC = (fanId) => ({
+export const follow = (fanId) => ({
   type: FOLLOW,
   fanId
 });
-export const unfollowAC = (fanId) => ({
+export const unfollow = (fanId) => ({
   type: UNFOLLOW, 
   fanId
 });
-export const setFansAC = (fans) => ({
+export const setFans = (fans) => ({
     type: SET_FANS, 
     fans
   });
-  export const setCurrentPageAC = (currentPage) => ({
+  export const setCurrentPage = (currentPage) => ({
     type: SET_CURRENT_PAGE, 
     currentPage
   });
-  export const setTotalFansCountAC = (totalFansCount) => ({
+  export const setTotalFansCount = (totalFansCount) => ({
     type: SET_TOTAL_FANS_COUNT, 
     count:totalFansCount
   });
-  export const toggleIsFetchingAC = (isFetching) => ({
+  export const toggleIsFetching = (isFetching) => ({
     type: TOGGLE_IS_FETCHING, 
     isFetching
   });

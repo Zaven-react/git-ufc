@@ -1,7 +1,7 @@
 import axios from "axios";
 import React from "react";
 import { connect } from "react-redux";
-import { followAC, setCurrentPageAC, setFansAC, unfollowAC,setTotalFansCountAC, toggleIsFetchingAC } from "../../Redux/fanc-reducer";
+import { follow, setCurrentPage, setFans, unfollow,setTotalFansCount, toggleIsFetching } from "../../Redux/fanc-reducer";
 import Preloader from "../common/preloader/Preloader";
 import Fans from "./Fans";
 
@@ -56,28 +56,28 @@ let mapStateToProps = (state)=>{
     }
 }
 
-let mapDispatchToProps = (dispatch)=>{
-    return{
-        follow:(fanId)=>{
-            dispatch(followAC(fanId))
-        },
-        unfollow:(fanId)=>{
-            dispatch(unfollowAC(fanId))
-        },
-        setFans:(fans)=>{
-            dispatch(setFansAC(fans))
-        },
-        setCurrentPage:(pageNumber)=>{
-            dispatch(setCurrentPageAC(pageNumber))
-        },
-        setTotalFansCount:(totalCount)=>{
-            dispatch(setTotalFansCountAC(totalCount))
-        },
-        toggleIsFetching:(isFetching)=>{
-            dispatch(toggleIsFetchingAC(isFetching))
-        }
-    }
-}
+// let mapDispatchToProps = (dispatch)=>{
+//     return{
+//         follow:(fanId)=>{
+//             dispatch(followAC(fanId))
+//         },
+//         unfollow:(fanId)=>{
+//             dispatch(unfollowAC(fanId))
+//         },
+//         setFans:(fans)=>{
+//             dispatch(setFansAC(fans))
+//         },
+//         setCurrentPage:(pageNumber)=>{
+//             dispatch(setCurrentPageAC(pageNumber))
+//         },
+//         setTotalFansCount:(totalCount)=>{
+//             dispatch(setTotalFansCountAC(totalCount))
+//         },
+//         toggleIsFetching:(isFetching)=>{
+//             dispatch(toggleIsFetchingAC(isFetching))
+//         }
+//     }
+// }
 
 
-export default connect(mapStateToProps,mapDispatchToProps)(FansContainer)
+export default connect(mapStateToProps,{follow,unfollow,setFans,setCurrentPage,setTotalFansCount,toggleIsFetching})(FansContainer)
